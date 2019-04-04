@@ -67,12 +67,14 @@ function personaState($state)
 <div class="usergames">
     <?php
 
-    foreach ($json2 as $games) {
-        var_dump($games["games"]);
-        foreach ($games as $game) {
-            echo $game["appid"];
-            echo $game["name"];
-            echo $game["playtime_forever"];
+    echo "Owned games:" . "<br>";
+    $keys = array_keys($json2);
+    for($i = 0; $i < count($json2); $i++) {
+        //echo $keys[$i] . "<br>";
+        foreach($json2[$keys[$i]] as $key => $value) {
+            foreach ($value as $game){
+                echo $game["name"] . "<br>";
+            }
         }
     }
 
