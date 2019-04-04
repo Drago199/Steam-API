@@ -67,7 +67,9 @@ function personaState($state)
 <div class="usergames">
     <?php
 
+    echo "Total owned games:" . $json2["response"]["game_count"] . "<br>";
     echo "Owned games:" . "<br>";
+
     $keys = array_keys($json2);
     for($i = 0; $i < count($json2); $i++) {
         //echo $keys[$i] . "<br>";
